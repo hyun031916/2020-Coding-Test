@@ -1,24 +1,38 @@
-# #1. 문자열을 대체하는 함수를 작성하시오
-# def 문자열대체(string, old, new):
-#     a = string.replace(old, new)
-#     return a
+#1. 문자열을 대체하는 함수를 작성하시오
+def 문자열대체(string, old, new):
+    a= str()
+    for i in string:
+        if(i!=old):
+            a+=i
+        else:
+            a+= new
+    return a
+
+phone_number = "010-1111-2222"
+a = 문자열대체(phone_number, "-", " ")
+print(a)
 #
-# phone_number = "010-1111-2222"
-# a = 문자열대체(phone_number, "-", " ")
-# print(a)
-#
-# #2. 문자열을 list 형태로 쪼개시오
+#2. 문자열을 list 형태로 쪼개시오
 # def 문자열쪼개기(string, sep):
-#    return string.split(sep)
+#     a = list()
+#     count = 0
+#     for i in string:
+#         if(i==sep):
+#
+#     return a
 #
 #
 # phone_number = "010-1111-2222"
 # a = 문자열쪼개기(phone_number, "-")
 # print(a)
 #
-# #3. list 특정위치에 특정값을 삽입하시오
+#3. list 특정위치에 특정값을 삽입하시오
 # def 아이템삽입(src, index, object):
-#     return src[:index]+object.split(" ")+src[index:]
+#     result = src[:index]
+#     result.append(object)
+#     for i in range(index, len(src)):
+#         result.append(src[i])
+#     return result
 #
 # movie_rank = ['닥터 스트레인지', '스플릿', '럭키', '배트맨']
 # a = 아이템삽입(movie_rank, 1, "슈퍼맨")
