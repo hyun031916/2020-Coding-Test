@@ -7,50 +7,82 @@
 #         else:
 #             a+= new
 #     return a
+# def 문자열대체(string, old, new):
+#     result = ""
+#     for x in string:
+#         if x==old:
+#             result += new
+#         else:
+#             result += x
+#     return result
 #
 # phone_number = "010-1111-2222"
 # a = 문자열대체(phone_number, "-", " ")
 # print(a)
 #
 # 2. 문자열을 list 형태로 쪼개시오
-def 문자열쪼개기(string, sep):
-    li = list()
-    li+=string[:-3]
-    li+=string[4:8]
-    li+=string[9:]
-    return li
-
-
-phone_number = "010-1111-2222"
-a = 문자열쪼개기(phone_number, "-")
-print(a)
+# def 문자열쪼개기(string, sep):
+#     result = list()
+#     temp = ""
+#     for x in string:
+#         if x!=sep:
+#             temp+=x
+#         else:
+#             result.append(temp)
+#             temp=""
+#     result.append(temp)
+#     return result
 #
-#3. list 특정위치에 특정값을 삽입하시오
+#
+# phone_number = "010-1111-2222"
+# a = 문자열쪼개기(phone_number, "-")
+# print(a)
+#
+# #3. list 특정위치에 특정값을 삽입하시오
 # def 아이템삽입(src, index, object):
-#     result = src[:index]
-#     result+=object
-#     for i in range(index, len(src)):
-#         result+=(src[i])
+#     src_len = len(src)+1
+#     result = [x for x in range(src_len)]
+#     for i in range(src_len):
+#         if i <index:
+#             result[i] = src[i]
+#         elif i==index:
+#             result[i] = object
+#         else:
+#             result[i] = src[i-1]
+#     # result = src[:index]
+#     # result+=object
+#     # for i in range(index, len(src)):
+#     #     result+=(src[i])
 #     return result
 #
 # movie_rank = ['닥터 스트레인지', '스플릿', '럭키', '배트맨']
 # a = 아이템삽입(movie_rank, 1, "슈퍼맨")
+#
+# print(a)
+#
+#4. list 특정값을 삭제하시오
+def 아이템_삭제(src, object):
+    src_len=len(src)
+    temp = [0 for i in range(src_len)]
+    for i in range(src_len):
+        if(src[i] != object):
+            temp[i] = src[i]
+    return [x for x in temp if x!=0]
 
-# print(a)
-#
-# #4. list 특정값을 삭제하시오
-# def 특정아이템삭제(src, object):
-#     count = 0
-#     for j in src:
-#         count += 1
-#     for i in range(count):
-#        if(src[i]==object):
-#            return src[:i]+src[i+1:]
-#
-# movie_rank = ['럭키', '스플릿', '럭키', '배트맨']
-# a = 특정아이템삭제(movie_rank, "럭키")
-#
-# print(a)
+def zero_count(src):
+    pass
+def 특정아이템삭제(src, object):
+    count = 0
+    for j in src:
+        count += 1
+    for i in range(count):
+       if(src[i]==object):
+           return src[:i]+src[i+1:]
+
+movie_rank = ['럭키', '스플릿', '럭키', '배트맨']
+a = 특정아이템삭제(movie_rank, "럭키")
+
+print(a)
 
 # #5. list 특정값을 삭제하시오
 # def 특정아이템모두삭제(src, object):
