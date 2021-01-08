@@ -3,11 +3,21 @@
 
 def solution(score):
     # 여기에 코드를 작성해주세요.
-    answer = []
+    등수 = dict()
     answer = [0] * len(score)
+    정렬된리스트 = sorted(score, reverse=True)
+    for idx, value in enumerate(정렬된리스트):
+        등수[value] = idx + 1
     for i in range(len(score)):
-        answer[i] = sum(map(lambda s: s > score[i], score))+1
+        answer[i] = 등수[score(i)]
     return answer
+
+
+    # answer = []
+    # answer = [0] * len(score)
+    # for i in range(len(score)):
+    #     answer[i] = sum(map(lambda s: s > score[i], score))+1
+    # return answer
 
 #아래는 테스트케이스 출력을 해보기 위한 코드입니다.
 score1 = [90, 87, 87, 23, 35, 28, 12, 46]

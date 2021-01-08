@@ -4,10 +4,14 @@
 def solution(time_table, n):
     #여기에 코드를 작성해주세요.
     answer = 0
-    arr = [0 for _ in range(n)]
-    for i, j in enumerate(time_table):
-        arr[i % n] += j
-    answer = max(arr)
+    temp = [0]*n
+    for i in range(len(time_table)):
+        temp[i%n] += time_table[i]
+    # arr = [0 for _ in range(n)]
+    # for i, j in enumerate(time_table):
+    #     arr[i % n] += j
+    # answer = max(arr)
+    answer = max(temp)
     return answer
 
 #아래는 테스트케이스 출력을 해보기 위한 코드입니다.
